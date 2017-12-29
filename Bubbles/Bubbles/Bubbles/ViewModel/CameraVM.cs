@@ -11,8 +11,8 @@ namespace Bubbles.ViewModel
 {
     public class CameraVM : INotifyPropertyChanged
     {
-        private Image photoImage { get; set; }
-        public Image PhotoImage
+        private string photoImage { get; set; }
+        public string PhotoImage
         {
 
 
@@ -26,13 +26,17 @@ namespace Bubbles.ViewModel
         }
 
 
-        public ICommand views => (new Command(async () => await displayCommand()));
+        public ICommand Click => (new Command(async () => await displayCommand()));
         private async Task displayCommand()
         {
             var photo = await Plugin.Media.CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions() { });
 
             if (photo != null)
-                PhotoImage.Source = ImageSource.FromStream(() => { return photo.GetStream(); });
+            { 
+                PhotoImage = photo.Path;
+                OnPropertyChanged("PhotoImage");
+            }
+            else { }
         
     }
         public event PropertyChangedEventHandler PropertyChanged;

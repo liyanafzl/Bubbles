@@ -9,7 +9,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Image  Source="{Binding ImageSource}"/>
+        <Image  Source="{Binding PhotoImage}"/>
         <Button Command="{Binding Click}" Text="Take Photo" Grid.Row="1" />
     </Grid>
 
