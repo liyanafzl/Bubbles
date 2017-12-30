@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Bubbles.Services
 {
-    class AudioRecService
+     public class AudioRecService
     {
         public static async Task<string> RecordAudio()
         {
