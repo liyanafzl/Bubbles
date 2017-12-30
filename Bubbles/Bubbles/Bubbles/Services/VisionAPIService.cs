@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Bubbles.Services
 {
-    static class VisionAPIService
+  public  static class VisionAPIService
     {
        
         const string subscriptionKey = "0ed512cabd4248c1949592bbcceac21d";
@@ -27,7 +27,7 @@ namespace Bubbles.Services
         /// Gets the analysis of the specified image file by using the Computer Vision REST API.
         /// </summary>
         /// <param name="imageFilePath">The image file.</param>
-        static async Task<ImageResult> MakeAnalysisRequest(string imageFilePath)
+       public static async Task<ImageResult> MakeAnalysisRequest(string imageFilePath)
         {
             HttpClient client = new HttpClient();
 

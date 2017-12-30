@@ -11,6 +11,7 @@
         </Grid.RowDefinitions>
         <Image  Source="{Binding PhotoImage}"/>
         <Button Command="{Binding Click}" Text="Take Photo" Grid.Row="1" />
+        <Entry Text="{Binding word}"/>
     </Grid>
 
 </ContentPage>
