@@ -56,6 +56,9 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>10.0.3</Version>
     </PackageReference>
+    <PackageReference Include="PCLStorage">
+      <Version>1.0.2</Version>
+    </PackageReference>
     <PackageReference Include="Plugin.AudioRecorder">
       <Version>0.8.0</Version>
     </PackageReference>
