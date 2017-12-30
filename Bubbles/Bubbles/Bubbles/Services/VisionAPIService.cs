@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Bubbles.Models;
+using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Bubbles.Services
 {
@@ -20,28 +23,11 @@ namespace Bubbles.Services
         // NOTE: Free trial subscription keys are generated in the westcentralus region, so if you are using
         // a free trial subscription key, you should not need to change this region.
         const string uriBase = "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/analyze";
-
-
-        static void Main()
-        {
-            // Get the path and filename to process from the user.
-           // Console.WriteLine("Analyze an image:");
-          //  Console.Write("Enter the path to an image you wish to analzye: ");
-            string imageFilePath = Console.ReadLine();
-
-            // Execute the REST API call.
-            MakeAnalysisRequest(imageFilePath);
-
-           // Console.WriteLine("\nPlease wait a moment for the results to appear. Then, press Enter to exit...\n");
-            //Console.ReadLine();
-        }
-
-
         /// <summary>
         /// Gets the analysis of the specified image file by using the Computer Vision REST API.
         /// </summary>
         /// <param name="imageFilePath">The image file.</param>
-        static async void MakeAnalysisRequest(string imageFilePath)
+        static async Task<ImageResult> MakeAnalysisRequest(string imageFilePath)
         {
             HttpClient client = new HttpClient();
 
@@ -72,8 +58,10 @@ namespace Bubbles.Services
                 string contentString = await response.Content.ReadAsStringAsync();
 
                 // Display the JSON response.
-                Console.WriteLine("\nResponse:\n");
-                //1 Console.WriteLine(JsonPrettyPrint(contentString));
+                //Console.WriteLine("\nResponse:\n");
+                // Console.WriteLine(JsonPrettyPrint(contentString));
+
+               return JsonConvert.DeserializeObject<ImageResult>(contentString);
             }
         }
 
