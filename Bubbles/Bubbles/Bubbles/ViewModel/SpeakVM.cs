@@ -4,7 +4,11 @@ using System.Text;
 
 namespace Bubbles.ViewModel
 {
-    class SpeakVM
+    public class SpeakVM
     {
+        //public SpeakVM(String path)
+        //{
+        //    String Path = path;
+        //}
     }
 }
