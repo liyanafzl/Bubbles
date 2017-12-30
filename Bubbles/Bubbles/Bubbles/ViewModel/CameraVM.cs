@@ -1,4 +1,5 @@
 ﻿using Bubbles.Services;
+using Plugin.TextToSpeech;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,19 @@ namespace Bubbles.ViewModel
             }
         }
 
+        private string hears{ get; set; }
+        public string hear
+        {
+
+
+            get { return hears; }
+            set
+            {
+                hears = value;
+                OnPropertyChanged();
+
+            }
+        }
 
         public ICommand Click => (new Command(async () => await displayCommand()));
         private async Task displayCommand()
@@ -70,11 +84,26 @@ namespace Bubbles.ViewModel
                 //}
                 //var con=res.Description.Tags.
                 word = res.Description.Tags[0];
+               // await CrossTextToSpeech.Current.Speak(word);
 
             }
             else { }
         
     }
+        public ICommand audio => (new Command(async () => await hearCommand()));
+        private async Task hearCommand()
+        {
+            String res = await AudioRecService.RecordAudio();
+            hear = await SpeechService.RecognizeSpeechAsync(res);
+            OnPropertyChanged("hear");
+
+        }
+        //public ICommand hear => (new Command(async () => await heaCommand()));
+        //private async Task heaCommand(String res)
+        //{
+        //    await AudioRecService.RecordAudio();
+
+        //}
         public event PropertyChangedEventHandler PropertyChanged;
 
 
