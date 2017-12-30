@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bubbles.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,12 @@ namespace Bubbles.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SpeakPage : ContentPage
 	{
-		public SpeakPage ()
+      //  public string path;
+
+        public SpeakPage ()
 		{
 			InitializeComponent ();
-		}
+           // BindingContext = new SpeakVM(path);
+        }
 	}
 }
