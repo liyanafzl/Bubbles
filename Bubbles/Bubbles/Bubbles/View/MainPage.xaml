@@ -2,20 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Bubbles"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:Class="Bubbles.MainPage">
+    <StackLayout>
 
-    <Grid>
+        <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
+            <RowDefinition Height="300" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Image  Source="{Binding PhotoImage}"/>
-        <StackLayout Orientation="Horizontal" Grid.Row="1">
-        <Button Command="{Binding Click}" Text="Take Photo"  />
-            <Button Command="{Binding audio}" Text="speak"></Button>
-            <Label Text="{Binding hear}"/>
-        </StackLayout>
-        <Entry Text="{Binding word}"/>
+        <Image Grid.Row="0" Source="{Binding PhotoImage}"/>
+            <StackLayout Orientation="Horizontal" Grid.Row="1">
+                <Button Command="{Binding Click}" Text="Take Photo"  />
+                <Button Command="{Binding audio}" Text="speak"></Button>
+            </StackLayout>
+            <Entry Text="{Binding word}"/>
     </Grid>
+    <StackLayout>
+        <forms:AnimationView 
+                x:Name="LoadingAnimation" 
+                Animation="car.json" 
+                AutoPlay="True" Loop="true"
+                HeightRequest="200"
+                WidthRequest="200" />
+    </StackLayout>
+    <Label Text="{Binding hear}"/>
+    </StackLayout>
 
 </ContentPage>

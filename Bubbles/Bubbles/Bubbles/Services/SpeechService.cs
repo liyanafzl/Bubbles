@@ -17,7 +17,7 @@ namespace Bubbles.Services
         public static readonly string SpeechRecognitionEndpoint = "https://speech.platform.bing.com/recognize";
         public static readonly string AuthenticationTokenEndpoint = "https://api.cognitive.microsoft.com/sts/v1.0";
 
-        public static readonly string API_KEY = "82b15616b7bf484b888e2e98a2570ff1";
+        public static readonly string API_KEY = "fced1b7790b248a3800a434aa0ae4b25";
         public static string Token = String.Empty;
 
         async static Task<string> FetchTokenAsync(string fetchUri, string apiKey)

@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.4.1" />
+    <PackageReference Include="JosephAntolick.EZCompress1.Plugin" Version="1.0.0" />
     <PackageReference Include="Microsoft.ProjectOxford.Vision" Version="1.0.393" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="PCLStorage" Version="1.0.2" />
@@ -25,6 +27,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="View\FirstPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="View\SpeakPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
