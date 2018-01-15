@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bubbles.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace Bubbles
 		{
 			InitializeComponent();
 
-			MainPage = new Bubbles.MainPage();
+			MainPage = new NavigationPage(new FirstPage());
 		}
 
 		protected override void OnStart ()

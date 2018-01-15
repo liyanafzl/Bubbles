@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bubbles.View.FirstPage"
+             BackgroundImage="bubble.jpg">
+    <StackLayout>
+    <Button Text="Click" Clicked="Click" HeightRequest="90" WidthRequest="300"/>
+    </StackLayout>
+</ContentPage>
