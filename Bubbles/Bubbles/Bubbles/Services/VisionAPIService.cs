@@ -12,7 +12,7 @@ namespace Bubbles.Services
   public  static class VisionAPIService
     {
        
-        const string subscriptionKey = "0ed512cabd4248c1949592bbcceac21d";
+        const string subscriptionKey = "edd58138f2af4caa91bf32efb70ea2c0";
 
         // Replace or verify the region.
         //

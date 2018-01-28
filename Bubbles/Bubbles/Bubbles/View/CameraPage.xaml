@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Bubbles.View.FirstPage"
-             BackgroundImage="bubble.jpg">
+             x:Class="Bubbles.View.CameraPage"
+             BackgroundImage="bubble1">
     <RelativeLayout>
-        <Image     Source="btn.png"
-                   WidthRequest="60"
-                   HeightRequest="60"
+        <Image     Source="camera"
+                   WidthRequest="85"
+                   HeightRequest="85"
                    HorizontalOptions="Center"
                    RelativeLayout.HeightConstraint="{ConstraintExpression
                    Type=RelativeToParent,Property=Width,Factor=.3,Constant=530}"
                    RelativeLayout.WidthConstraint="{ConstraintExpression
-                   Type=RelativeToParent,Property=Height,Factor=.6,Constant=10}">
-                   <Image.GestureRecognizers>
-                    <TapGestureRecognizer
-                        Command="{Binding PlayCommand}"/>
-                   </Image.GestureRecognizers>
+                   Type=RelativeToParent,Property=Height,Factor=.6,Constant=8}">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                        Command="{Binding CameraCommand}"/>
+            </Image.GestureRecognizers>
         </Image>
     </RelativeLayout>
 </ContentPage>

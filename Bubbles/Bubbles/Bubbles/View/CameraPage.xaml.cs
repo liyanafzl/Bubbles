@@ -11,15 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace Bubbles.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class FirstPage : ContentPage
+	public partial class CameraPage : ContentPage
 	{
-		public FirstPage ()
+		public CameraPage ()
 		{
 			InitializeComponent ();
-            BindingContext = new FirstPageVM(this.Navigation);
-
-        }
-        
-        
+            BindingContext = new CameraPageVM(this.Navigation);
+		}
 	}
 }

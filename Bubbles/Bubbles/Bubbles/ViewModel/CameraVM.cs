@@ -54,6 +54,18 @@ namespace Bubbles.ViewModel
 
             }
         }
+        public CameraVM(string photoImage,string word)
+        {
+            PhotoImage = photoImage;
+            this.word = word;
+            OnPropertyChanged("PhotoImage");
+            foreach (char i in word)
+            {
+                string str = i.ToString();
+                Services.AudioRecService.PlayAudio(str);
+            }
+            Services.AudioRecService.PlayAudio(word);
+        }
 
         public ICommand Click => (new Command(async () => await displayCommand()));
         private async Task displayCommand()
@@ -82,6 +94,10 @@ namespace Bubbles.ViewModel
                 hear = await SpeechService.RecognizeSpeechAsync(res);
                 OnPropertyChanged("hear");
                 await Services.AudioRecService.PlayAudio(hear);
+                if (hear.Equals(word))
+                {
+                    await Services.AudioRecService.PlayAudio("Congratulations");
+                }
 
             }
             

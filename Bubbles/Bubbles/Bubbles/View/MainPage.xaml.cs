@@ -10,10 +10,10 @@ namespace Bubbles
 {
 	public partial class MainPage : ContentPage
 	{
-		public MainPage()
+		public MainPage(string path,string word)
 		{
 			InitializeComponent();
-            BindingContext = new CameraVM();
+            BindingContext = new CameraVM(path,word);
 		}
 	}
 }
